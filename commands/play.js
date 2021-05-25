@@ -74,7 +74,7 @@ module.exports = {
             } else {
                 server_queue.songs.push(song);
                 const embed = new discord.MessageEmbed()
-                    .setColor('#039154')
+                    .setColor('#11d0ed')
                     .setDescription(`👍 **${song.title}** added to queue!`)
                 return message.channel.send(embed);
             }
@@ -102,7 +102,7 @@ const video_player = async (guild, song) => {
             video_player(guild, song_queue.songs[0]);
         });
     const embed = new discord.MessageEmbed()
-        .setColor('#039154')
+        .setColor('#11d0ed')
         .setDescription(`🎶 Now playing **${song.title}**`)
     await song_queue.text_channel.send(embed)
 }
@@ -112,7 +112,7 @@ const skip_song = (message, server_queue) => {
         return message.channel.send('You need to be in a channel to execute this command');
     if (!server_queue) {
         const embed = new discord.MessageEmbed()
-            .setColor('#039154')
+            .setColor('#11d0ed')
             .setDescription(`There are no songs in queue 😔`)
         return message.channel.send(embed);
     }
