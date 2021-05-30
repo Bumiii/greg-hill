@@ -12,4 +12,15 @@ client.events = new Discord.Collection();
     require(`./handlers/${handler}`)(client, Discord);
 });
 
+client.on('ready', () => {
+    client.user.setPresence({
+        status: 'available',     //sets status button to green   
+        activity: {
+            name: `Scary step sis sheck stuck under the garbage disposal slutty fan fic day anniversary`,    //This is the custom text  
+            type: 'WATCHING'     //this is the type (duh). 'watching' would also be an option  
+        }
+        
+    });
+});
+
 client.login(process.env.DISCORD_TOKEN);
